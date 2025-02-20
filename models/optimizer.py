@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 
 class PortfolioOptimizer(nn.Module):
@@ -10,7 +9,7 @@ class PortfolioOptimizer(nn.Module):
             nn.Linear(hidden_size, hidden_size),
             nn.ReLU(),
             nn.Linear(hidden_size, output_size),
-            nn.Softmax(dim=1)  # Ensure allocations sum to 1
+            nn.Softmax(dim=1) 
         )
         
     def forward(self, x):
