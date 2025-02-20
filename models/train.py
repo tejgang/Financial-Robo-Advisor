@@ -5,6 +5,7 @@ from .classifier import RiskProfileClassifier
 from .optimizer import PortfolioOptimizer
 
 class ModelTrainer:
+    
     def __init__(self, device='cuda' if torch.cuda.is_available() else 'cpu'):
         self.device = device
         
