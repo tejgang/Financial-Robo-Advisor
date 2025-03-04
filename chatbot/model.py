@@ -65,7 +65,7 @@ class ChatBot:
     
     def _handle_portfolio_recommendation(self, text):
         if not self._validate_profile():
-            return "Please provide your age, income, and risk tolerance (1-5)"
+            return "Please provide your age, income, risk tolerance (1-5), investment horizon (in years), and debt"
             
         features = torch.tensor([
             self.user_profile['age'],

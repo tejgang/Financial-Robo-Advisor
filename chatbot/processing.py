@@ -5,6 +5,7 @@ class FinancialTokenizer:
     def __init__(self, vocab_size=10000):
         self.word_counts = defaultdict(int)
         self.vocab = {}
+        self.vocab_size = vocab_size
         
     def fit(self, texts):
         for text in texts:

@@ -53,7 +53,8 @@ def train_intent_model(model, dataset, tokenizer, device, epochs=10):
         total_loss = 0
         correct = 0
         for texts, lengths, intents, _, _ in train_loader:
-            texts, lengths, intents = texts.to(device), lengths.to(device), intents.to(device)
+            texts = texts.to(device)
+            intents = intents.to(device)
             
             optimizer.zero_grad()
             outputs = model(texts, lengths)
@@ -82,7 +83,8 @@ def train_recommender(model, dataset, tokenizer, device, epochs=20):
     for epoch in range(epochs):
         total_loss = 0
         for _, _, _, profiles, allocations in train_loader:
-            profiles, allocations = profiles.to(device), allocations.to(device)
+            profiles = profiles.to(device)
+            allocations = allocations.to(device)
             
             optimizer.zero_grad()
             outputs = model(profiles)
