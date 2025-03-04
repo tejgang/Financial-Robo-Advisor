@@ -42,11 +42,3 @@ class YahooFinanceScraper:
             prepost=True
         )
         return data.iloc[-1]['Close'].values
-
-# Example usage:
-if __name__ == "__main__":
-    scraper = YahooFinanceScraper()
-    hist_data = scraper.get_historical_data()
-    market_data = scraper.process_market_data(hist_data)
-    print("Expected Returns:", market_data['expected_returns'])
-    print("Covariance Matrix:\n", market_data['cov_matrix'])
